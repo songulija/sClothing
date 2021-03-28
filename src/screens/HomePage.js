@@ -1,17 +1,11 @@
 import React from 'react'
-
+import Directory from '../components/directory/Directory'
 import './homePage.scss'
+
 function HomePage() {
     return (
         <div className='homepage'>
-            <div className='directory-menu'>
-                <div className='menu-item'>
-                    <div className='content'>
-                        <h1 className='title'>Hats</h1>
-                        <span className='subtitle'>Shop now</span>
-                    </div>
-                </div>
-            </div>
+            <Directory />
         </div>
     )
 }
