@@ -1,0 +1,32 @@
+.header {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+
+    //header container is 100% in width, display flex, so when we put space-between
+    //children inside will seperate to right and left
+  
+    .logo-container {
+      height: 100%;
+      width: 70px;
+      padding: 25px;
+    }
+    //height width and bit padding
+    
+    //options take 50% of header width
+    .options {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      //and setting display flex so they will be on right side end
+  
+      .option {
+        padding: 10px 15px;
+      }
+    }
+  }
+  

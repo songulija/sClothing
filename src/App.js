@@ -2,6 +2,7 @@
 import React from 'react'
 import { Route, Link, Switch } from 'react-router-dom'
 import './App.css';
+import Header from './components/header/Header';
 import HatsScreen from './screens/HatsScreen';
 import HomePage from './screens/HomePage';
 import ShopPage from './screens/shopPage/ShopPage';
@@ -9,6 +10,7 @@ import ShopPage from './screens/shopPage/ShopPage';
 function App() {//to use Routes in App componennt we use Router
   return (
     <div>
+      <Header />
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route path='/shop' component={ShopPage} />
