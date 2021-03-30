@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import CustomButton from '../customButton/CustomButton';
 import FormInput from '../formInput/FormInput';
 import './styles.scss'
 
@@ -19,7 +20,7 @@ function SignIn() {
         <form onSubmit={submitHandler}>
             <FormInput name='email' type='email' label='email' value={email} required handleChange={(e) => setEmail(e.target.value)}/>
             <FormInput name='password' type='password' label='password' value={password} required handleChange={(e) => setPassword(e.target.value)} />
-            <input type='submit' value='' />
+            <CustomButton type='submit' value=''>SIGN IN</CustomButton>
         </form>
         </div>
     )

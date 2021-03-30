@@ -1,4 +1,12 @@
 .sign-in {
     width: 30vw;
+    display: flex;
+    flex-direction: column;
+
 }
-//30% of total
+
+.title{
+    margin: 10px 0;
+}
+//30% of total. add display flex to our sign-in components. and direction is column
+//so they will be vertically
