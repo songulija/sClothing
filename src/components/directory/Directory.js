@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './styles.scss'
 import MenuItem from '../menuitem/MenuItem'
-import dsections from './directoryData.js'
+import dsections from '../../data/directoryData.js'
 
 
 function Directory() {

@@ -1,9 +1,12 @@
 import React from 'react'
-import {withRouter} from 'react-router-dom';//powering up our component to have acces to those things related to router
+import { withRouter } from 'react-router-dom';//powering up our component to have acces to those things related to router
 import './styles.scss'
 //destructure title from props
 const MenuItem = ({ title, imageUrl, size, match, history }) => (//match.url(where we are.)
-    <div className={`${size} menu-item`} onClick={()=> history.push(`${match.url}${title.toLowerCase()}`)}>
+    <div
+        className={`${size} menu-item`}
+        onClick={() => history.push(`${match.url}${title.toLowerCase()}`)}
+    >
         <div
             className='background-image'
             style={{
