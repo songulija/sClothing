@@ -9,3 +9,8 @@ a{
   color: black;
 }
 
+/* for every element we want box-sizing : border box 
+so padding border and margin dont affect element size*/
+*{
+  box-sizing: border-box;
+}
