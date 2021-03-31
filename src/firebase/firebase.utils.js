@@ -17,6 +17,39 @@ const config = {
     measurementId: "G-VJTFFJEDGX"
 };
 
+//take user object what we got from authentication library and store in db
+//when calling this async function provide userAuth object, and any additional data we could need(object)
+export const createUserProfileDocument = async (userAuth, additionalData) => {
+    if (!userAuth) return;//if userAuth object doesnt exist
+
+    //check if user document in users collection already exist 
+    const userRef = firestore.doc(`users/${userAuth.uid}`)
+
+    //using snapshot we will know if there is data there. if we stored that user user object
+    const snapShot = await userRef.get();//check if document with that id exists
+
+    //if data doesnt exist we actually want to create peace of data there
+    if (!snapShot.exists) {
+        const { displayName, email } = userAuth;//destructuring userAuth object
+        const createdAt = new Date();
+
+        try {
+            //.set is create method. create document in users collection from userAuth object
+            await userRef.set({
+                displayName,
+                email,
+                createdAt,
+                ...additionalData
+            })//store displayName email and whatever is in ...aditionalDAta
+        } catch (error) {
+            console.log('error creating user', error.message)
+        }
+    }
+
+    //return userRef object. we might want userRef code for something
+    return userRef;
+}
+
 // Initialize Firebase, and pass config
 firebase.initializeApp(config);
 
