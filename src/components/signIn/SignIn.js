@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import CustomButton from '../customButton/CustomButton';
 import FormInput from '../formInput/FormInput';
-import { signInWithGoogle } from '../../firebase/firebase.utils.js'
+import { auth, signInWithGoogle } from '../../firebase/firebase.utils.js'
 import './styles.scss'
 
 function SignIn() {
@@ -9,9 +9,23 @@ function SignIn() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('')
 
-    const submitHandler = (e) => {
+    const submitHandler = async(e) => {
         e.preventDefault();
-        console.log('Hello')
+        
+        try{
+            //Asynchronously signs in (authentication) using an email and password.
+            //Fails with an error if the email address and password do not match.
+            await auth.signInWithEmailAndPassword(email,password)
+
+            clearState()
+        }catch(error){
+            console.log(error)
+        }
+    }
+
+    const clearState = () =>{
+        setEmail('')
+        setPassword('')
     }
 
     return (
