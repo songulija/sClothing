@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import { auth } from '../../firebase/firebase.utils.js'
 import { ReactComponent as Logo } from '../../assets/crown.svg'
 import './styles.scss'
+import CartIcon from '../cartIcon/CartIcon.js'
+import CartDropdown from '../cart-dropdown/CartDropdown.js'
 
 //destructure props that are passed to header component
 function Header() {
@@ -33,7 +35,9 @@ function Header() {
                         SIGN IN
                     </Link>
                 )}
+                <CartIcon />
             </div>
+            <CartDropdown />
         </div>
     )
 }//if currentUser is passed then show SignOut, onClick call auth method signOut
