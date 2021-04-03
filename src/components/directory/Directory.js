@@ -11,7 +11,7 @@ function Directory() {
     return (
         <div className='directory-menu'>
             {sections.map((section) => (
-                <MenuItem ket={section.key} title={section.title}
+                <MenuItem key={section.id} title={section.title}
                     imageUrl={section.imageUrl} size={section.size} />
             ))}
         </div>
